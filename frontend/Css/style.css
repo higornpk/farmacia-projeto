@@ -1,7 +1,28 @@
+/* ==========================================================
+   DROGAVAZ - Folha de estilos principal
+   ========================================================== */
+
+
+/* ===== 1. VARIÁVEIS E TEMAS ===== */
 :root {
     --cor-principal: #1572eb;
+    --cor-principal-escura: darkblue;
 }
 
+.tema-vermelho {
+    --cor-principal: rgba(255, 0, 0, 0.995);
+    --cor-principal-escura: darkred;
+}
+
+
+/* ===== 2. BASE ===== */
+body {
+    margin: 0;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+}
+
+
+/* ===== 3. CABEÇALHO E MENU ===== */
 header {
     display: flex;
     justify-content: space-between;
@@ -11,11 +32,6 @@ header {
     color: white;
 }
 
-header a {
-    color: rgb(255, 255, 254);
-    text-decoration: none;
-}
-
 header nav ul {
     display: flex;
     gap: 30px;
@@ -23,23 +39,20 @@ header nav ul {
     padding: 0;
 }
 
-body {
-    margin: 0;
-    font-family: Arial, Verdana, Helvetica, sans-serif;
+header a {
+    color: rgb(255, 255, 254);
+    text-decoration: none;
 }
 
-footer {
-    background-color: var(--cor-principal);
-    color: white;
-    text-align: center;
-    padding: 8px;
-}
 
+/* ===== 4. BANNER PRINCIPAL (HERO) ===== */
 .hero {
     text-align: center;
     padding: 70px 20px;
 }
 
+
+/* ===== 5. BOTÃO ===== */
 .botao {
     background-color: var(--cor-principal);
     color: white;
@@ -51,10 +64,12 @@ footer {
 }
 
 .botao:hover {
-    background-color: darkblue; 
+    background-color: var(--cor-principal-escura);
 }
 
-.card-listas{
+
+/* ===== 6. CATEGORIAS E CARDS ===== */
+.card-listas {
     display: flex;
     gap: 28px;
     padding: 40px;
@@ -63,7 +78,16 @@ footer {
 .card {
     flex: 1;
     padding: 20px;
-    background-color: var(--cor-principal) ;
+    background-color: var(--cor-principal);
     border-radius: 10px;
     color: white;
+}
+
+
+/* ===== 7. RODAPÉ ===== */
+footer {
+    background-color: var(--cor-principal);
+    color: white;
+    text-align: center;
+    padding: 8px;
 }
