@@ -28,6 +28,13 @@ body {
     font-family: Arial, Verdana, Helvetica, sans-serif;
 }
 
+footer {
+    background-color: var(--cor-principal);
+    color: white;
+    text-align: center;
+    padding: 8px;
+}
+
 .hero {
     text-align: center;
     padding: 70px 20px;
