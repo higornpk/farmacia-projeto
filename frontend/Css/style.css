@@ -5,12 +5,37 @@
 
 /* ===== 1. VARIÁVEIS E TEMAS ===== */
 :root {
+    /* Cores da marca (mudam de acordo com o tema) */
     --cor-principal: #1572eb;
     --cor-principal-escura: darkblue;
+
+    /* Cores neutras */
+    --cor-texto: #333;
+    --cor-fundo: #f8f9fa;
+    --cor-superficie: #ffffff;
+    --cor-borda: #e0e0e0;
+
+    /* Espaçamento */
+    --espaco-xs: 8px;
+    --espaco-sm: 12px;
+    --espaco-md: 20px;
+    --espaco-lg: 24px;
+    --espaco-xl: 28px;
+    --espaco-2xl: 40px;
+    --espaco-3xl: 70px;
+
+    /* Forma */
+    --raio: 12px;
+
+    /* Sombras */
+    --sombra-botao: 0 4px 10px rgba(0, 0, 0, 0.15);
+    --sombra-botao-hover: 0 6px 15px rgba(0, 0, 0, 0.25);
+    --sombra-card: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --sombra-card-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .tema-vermelho {
-    --cor-principal: rgba(255, 0, 0, 0.995);
+    --cor-principal: #d7262b;
     --cor-principal-escura: darkred;
 }
 
@@ -19,8 +44,8 @@
 body {
     margin: 0;
     font-family: Arial, Verdana, Helvetica, sans-serif;
-    background-color: #f8f9fa;
-    color: #333
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
 }
 
 
@@ -29,7 +54,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 20px;
+    padding: var(--espaco-sm) var(--espaco-md);
     background-color: var(--cor-principal);
     color: white;
 }
@@ -50,7 +75,7 @@ header a {
 /* ===== 4. BANNER PRINCIPAL (HERO) ===== */
 .hero {
     text-align: center;
-    padding: 70px 20px;
+    padding: var(--espaco-3xl) var(--espaco-md);
 }
 
 
@@ -60,41 +85,41 @@ header a {
     color: white;
     text-decoration: none;
     display: inline-block;
-    padding: 12px 28px;
-    border-radius: 12px;
+    padding: var(--espaco-sm) var(--espaco-xl);
+    border-radius: var(--raio);
     font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--sombra-botao);
     transition: all 0.2s ease-in-out;
 }
 
 .botao:hover {
     background-color: var(--cor-principal-escura);
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    box-shadow: var(--sombra-botao-hover);
 }
 
 
 /* ===== 6. CATEGORIAS E CARDS ===== */
 .card-listas {
     display: flex;
-    gap: 28px;
-    padding: 40px;
+    gap: var(--espaco-xl);
+    padding: var(--espaco-2xl);
 }
 
 .card {
     flex: 1;
-    padding: 24px;
-    background-color: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    color: #333333;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: var(--espaco-lg);
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    color: var(--cor-texto);
+    box-shadow: var(--sombra-card);
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    box-shadow: var(--sombra-card-hover);
 }
 
 .card h3 {
@@ -103,7 +128,7 @@ header a {
 }
 
 .categorias h2 {
-    padding: 0 40px;
+    padding: 0 var(--espaco-2xl);
 }
 
 
@@ -112,8 +137,9 @@ footer {
     background-color: var(--cor-principal);
     color: white;
     text-align: center;
-    padding: 8px;
+    padding: var(--espaco-xs);
 }
+
 
 /* ===== 8. RESPONSIVO (CELULAR) ===== */
 @media (max-width: 768px) {
