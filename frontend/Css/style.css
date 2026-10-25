@@ -97,5 +97,10 @@ footer {
     .card-listas {
         flex-direction: column;
     }
+
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
 
