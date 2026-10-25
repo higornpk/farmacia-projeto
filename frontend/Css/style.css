@@ -83,6 +83,10 @@ header a {
     color: white;
 }
 
+.categorias h2 {
+    padding: 0 40px;
+}
+
 
 /* ===== 7. RODAPÉ ===== */
 footer {
