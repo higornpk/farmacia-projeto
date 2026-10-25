@@ -27,14 +27,14 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 30px;
+    padding: 12px 20px;
     background-color: var(--cor-principal);
     color: white;
 }
 
 header nav ul {
     display: flex;
-    gap: 30px;
+    gap: 25px;
     list-style: none;
     padding: 0;
 }
@@ -91,3 +91,11 @@ footer {
     text-align: center;
     padding: 8px;
 }
+
+/* ===== 8. RESPONSIVO (CELULAR) ===== */
+@media (max-width: 768px) {
+    .card-listas {
+        flex-direction: column;
+    }
+}
+
