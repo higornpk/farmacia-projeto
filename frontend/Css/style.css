@@ -263,7 +263,7 @@ footer {
 
 /* Badges e etiquetas flutuantes */
 .badge-tag {
-    position: absolute;
+    position: absolute; /* A tag se descola do fluxo normal */
     top: 10px;
     left: 10px;
     padding: 4px 10px;
@@ -345,4 +345,31 @@ footer {
     font-size: 0.9rem;
     padding: 10px;
 }
+
+/* ==========================================================
+   11. RESPONSIVIDADE DO CATÁLOGO (CELULAR E TABLET)
+   ========================================================== */
+
+@media (max-width: 768px) {
+    /* Em telas pequenas, os filtros e a vitrine ficam empilhados em coluna */
+    .catalogo-layout {
+        flex-direction: column;
+        padding: var(--espaco-md);
+        gap: var(--espaco-lg);
+    }
+
+    /* O painel de filtros ocupa toda a largura da tela */
+    .painel-filtros {
+        flex: none;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Reduzimos um pouco a altura da imagem nos cards para economizar espaço vertical */
+
+    .produto-imagem img {
+        height: 130px;
+    }
+}
+
 
