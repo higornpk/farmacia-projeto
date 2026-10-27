@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +6,7 @@
     <title>Drogavaz</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="tema-vermelho">
+<body class="">
 
     <header>
         <h1>Drogavaz</h1>
@@ -15,6 +15,8 @@
                 <li><a href="index.html"> Início </a></li>
                 <li><a href="catalogo.html">Catálogo</a></li>
                 <li><a href="enviar-receita.html">Enviar Receita</a></li>
+                <!-- Link direto para o carrinho para permitir acesso à finalização de compra -->
+                <li><a href="carrinho.html">Carrinho</a></li>
             </ul>
         </nav>
     </header>
@@ -28,18 +30,19 @@
         <section class="categorias">
             <h2>Nossos produtos</h2>
             <div class="card-listas">
-                <div class="card">
+                <!-- Links acessíveis para navegar até a listagem completa dos produtos -->
+                <a href="catalogo.html" class="card">
                     <h3>Medicamentos originais</h3>
                     <p>Os melhores e mais confiáveis estão aqui.</p>
-                </div>
-                <div class="card">
+                </a>
+                <a href="catalogo.html" class="card">
                     <h3>Medicamentos genéricos</h3>
                     <p>Uma melhor rentabilidade ao seu bolso sem perder qualidade.</p>
-                </div>
-                <div class="card">
+                </a>
+                <a href="catalogo.html" class="card">
                     <h3>Vitaminas / Suplementos</h3>
                     <p>Tudo que você procura para manter uma vida mais saudável.</p>
-                </div>
+                </a>
             </div>
         </section>
     </main>
@@ -48,5 +51,7 @@
         <p> &copy; 2026 Drogavaz - Projeto Fictício para portfólio </p>
     </footer>
 
+    <!-- Script principal carregado no final para garantir o DOM pronto -->
+    <script src="js/main.js"></script>
 </body>
 </html>
