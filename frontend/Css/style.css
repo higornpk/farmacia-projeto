@@ -152,3 +152,153 @@ footer {
         gap: 10px;
     }
 }
+
+/* ==========================================================
+   9. PÁGINA DE CATÁLOGO (LAYOUT E FILTROS)
+   ========================================================== */
+
+/* Layout principal dividindo a tela entre filtros (esquerda) e vitrine (direita) */ 
+.catalogo-layout {
+    display: flex;
+    gap: var(--espaco-2xl);
+    padding: var(--espaco-2xl);
+    max-width: 1200px; /* Limita a largura máxima para telas ultra-wide */
+    margin: 0 auto; /* Centraliza a página na tela */
+   }
+
+/* Painel lateral de filtros */
+.painel-filtros {
+    flex: 0 0 260px;  /* Define largura fixa de 260px que não encolhe */
+    background-color: var(--cor-superficie);
+    padding: var(--espaco-lg);
+    border-radius: var(--raio);
+    border: 1px solid var(--cor-borda);
+    box-shadow: var(--sombra-card);
+    height: fit-content; /* Faz o painel ter a altura apenas do seu conteúdo */
+   }
+
+/* Estilização dos titulos e grupos dentro do painel de filtros */
+.painel-filtros h2 {
+    margin-top: 0;
+    color: var(--cor-principal);
+    font-size: 1.4rem;
+    border-bottom: 2px solid var(--cor-fundo);
+    padding-bottom: var(--espaco-xs);
+   }
+
+.grupo-filtro {
+    margin-bottom: var(--espaco-lg);
+   }
+
+.grupo-filtro label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: var(--espaco-xs);
+    font-size: 0.95rem;
+   }
+
+/* Campos de texto  e seleção padronizados */
+.grupo-filtro input[type="text"],
+.grupo-filtro select {
+    width: 100%;
+    padding: var(--espaco-sm);
+    border: 1px solid var(--cor-borda);
+    border-radius: 6px;
+    box-sizing: border-box; /*Garante que o padding não estoure a largura */
+    font-family: inherit;
+   }
+
+/* Estilo para cada opção de checkbox */
+ .opcao-filtro {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    font-weight: normal !important;
+    margin-bottom: 6px;
+    cursor: pointer;
+   }
+
+/* Seção da vitrine ocupando todo espaço restante */
+
+.vitrine-produtos {
+    flex: 1;
+   }
+
+.vitrine-cabecalho h2 {
+    margin-top: 0;
+    color: var(--cor-texto
+    );
+   }
+
+
+/* ==========================================================
+   10. GRID E CARDS DE PRODUTOS
+   ========================================================== */
+ 
+/* Grade responsiva que ajusta o número de colunas automaticamente */
+.grid-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--espaco-lg);
+}
+
+/* Card individual de produto */
+.card-produto {
+    position: relative ; /* Necessário para posicionar a badge absoluta no topo*/
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    padding: var(--espaco-md);
+    box-shadow: var(--sombra-card);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Empurra o botão de comprar para a base do card */
+}
+
+.card-produto:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--sombra-card-hover);
+}
+
+/* Badges e etiquetas flutuantes */
+.badge-tag {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+    z-index: 1;
+}
+
+.tag-desconto {
+    background-color: #e63946; /* Vermelho para desconto */
+}
+
+.tag-destaque {
+    background-color: #2a9d8f; /* Verde agua para destaques / mais vendidos */
+}
+
+/*Imagem do produto */
+.produto-imagem img {
+    max-width: 100%;
+    height: 160px;
+    object-fit: contain; /* Garante que a imagem não fique distorcida */
+}
+
+/* Informações e Categoria */
+.categoria-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    color: #666;
+    background-color: #f0f0f0;
+    padding: 2px 8px;
+    border-radius:  4px;
+    margin-bottom: var(--espaco-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+

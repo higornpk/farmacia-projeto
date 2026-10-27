@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Produtos - Drogavaz</title>
+    <!-- Padronização visual reutilizando a folha de estilo principal -->
+     <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="tema-vermelho">
+    
+    <!-- Cabeçalho padronizado da aplicação -->
+    <header>
+        <h1>Drogavaz</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="enviar-receita.html">Enviar Receita</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Estrutura principal do catálogo dividida em filtros e lista de produtos -->
+    <main class="catalogo-layout">
+
+        <!-- Barra lateral de filtros: permite ao usuário refinar sua buscapor categoria e preço -->
+         <aside class="painel-filtros">
+            <h2>Filtros</h2>
+
+            <!-- Campo de busca rápida por texto -->
+             <div class="grupo-filtro">
+                <label for="campo-busca">Buscar Produto</label>
+                <input type="text" id="campo-busca" placeholder="Ex: Dipirona, Vitamina C ...">
+             </div>
+
+             <!-- Filtro de categorias por seleções individuais -->
+              <div class="grupo-filtro">
+                <h3>Categorias</h3>
+                <label class="opcao-filtro">
+                    <input type="checkbox" value="medicamentos">
+                    Medicamentos
+                </label>
+                <label class="opcao-filtro">
+                    <input type="checkbox" value="genericos">
+                    Genericos
+                </label>
+                <label class="opcao-filtro">
+                    <input type="checkbox" value="Vitaminas">
+                    Vitaminas e Suplementos
+                </label>
+              </div>
+
+              <!-- Seletor de ordenação dos produtos -->
+               <div class="grupo-filtro">
+                <label for="ordenar-por">Ordenar por</label>
+                <select id="ordenar-por">
+                    <option value="relevancia">Mais Relevantes</option>
+                    <option value="menor-preco">Menor Preço</option>
+                    <option value="maior-preco">Maior Preço</option>
+                </select>
+               </div>
+         </aside>
+
+         <!-- Area da vitrine onde os cards serão organizados -->
+          <section class="vitrine-produtos">
+
+            <!-- Cabeçalho simples da vitrine -->
+             <div class="vitrine-cabecalho">
+                <h2>Produtos Disponíveis</h2>
+             </div>
+
+             <!-- Cotainer da grade de produtos -->
+              <div class="grid-produtos">
+
+                <!-- Card de produto 1 -->
+                 <article class="card-produto">
+                    <!-- badge promocional em destaque no topo do card -->
+                     <span class="badge-tag tag-desconto">-25%</span>
+
+                     <!-- Imagem do produto com texto alternativo para acessibilidade -->
+                      <div class="produto-imagem">
+                        <img src="https://via.placeholder.com/200x200?text=Dipirona" alt="Dipirona Monoidratada 500mg">
+                      </div>
+
+                      <!-- Informações detalhadas do produto -->
+                       <div class="produto-info">
+                        <span class="categoria-badge">Genérico</span>
+                        <h3 class="produto-titulo">Dipirona Monoidratada 500mg</h3>
+                        <p class="produto-descricao">Caixa com 20 comprimidos solúveis</p>
+
+                        <!-- Bloco de precificação comparativa -->
+                         <div class="preco-bloco">
+                            <span class="preco-antigo">R$ 12,00</span>
+                            <span class="preco-atual">R$ 8,99</span>
+                         </div>
+
+                         <!-- Botão principal de ação do card -->
+                          <button class="botao botao-comprar">Adicionar ao Carrinho</button>
+                       </div>
+                 </article>
+
+                <!-- Card de Produto 2 -->
+                <article class="card-produto">
+                    <span class="badge-tag tag-destaque">Mais Vendido</span>
+                    <div class="produto-imagem">
+                        <img src="https://via.placeholder.com/200x200?text=Vitamina+C" alt="Vitamina C 1000mg">
+                    </div>
+                    <div class="produto-info">
+                        <span class="categoria-badge">Vitamina</span>
+                        <h3 class="produto-titulo">Vitamina C Efervescente 1000mg</h3>
+                        <p class="produto-descricao">Tubo com 10 comprimidos efervescentes</p>
+                        <div class="preco-bloco">
+                            <span class="preco-atual">R$ 15,50</span>
+                        </div>
+                        <button class="botao botao-comprar">Adicionar ao Carrinho</button>
+                    </div>
+                </article>
+
+                <!-- Card de Produto 3 -->
+                <article class="card-produto">
+                    <div class="produto-imagem">
+                        <img src="https://via.placeholder.com/200x200?text=Protetor+Solar" alt="Protetor Solar FPS 50">
+                    </div>
+                    <div class="produto-info">
+                        <span class="categoria-badge">Higiene</span>
+                        <h3 class="produto-titulo">Protetor Solar Corporal FPS 50</h3>
+                        <p class="produto-descricao">Frasco com 200ml - Toque seco</p>
+                        <div class="preco-bloco">
+                            <span class="preco-atual">R$ 49,90</span>
+                        </div>
+                        <button class="botao botao-comprar">Adicionar ao Carrinho</button>
+                    </div>
+                </article>
+              </div>
+          </section>
+    </main>
+
+        <!-- Rodapé padronizado -->
+    <footer>
+        <p>&copy; 2026 Drogavaz - Projeto Fictício para portfólio</p>
+    </footer>
+
+</body>
+</html>
