@@ -302,3 +302,47 @@ footer {
     letter-spacing: 0.5px;
 }
 
+.produto-titulo {
+    font-size: 1rem;
+    margin: 4px 0;
+    color: var(--cor-texto);
+    line-height: 1.3;
+}
+
+.produto-descricao {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 0;
+    margin-bottom: var(--espaco-md);
+}
+
+/* Precificação psicológica */
+.preco-bloco {
+    margin-bottom: var(--espaco-md);
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+}
+
+.preco-antigo {
+    font-size: 0.85rem;
+    color: #999;
+    text-decoration: line-through; /* Risca o preço antigo */
+}
+
+.preco-atual {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--cor-principal);
+}
+
+/* Botão de comprar do card */
+.botao-comprar {
+    width: 100%;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 10px;
+}
+
