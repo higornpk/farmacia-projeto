@@ -32,7 +32,11 @@
     --sombra-botao-hover: 0 6px 15px rgba(0, 0, 0, 0.25);
     --sombra-card: 0 4px 12px rgba(0, 0, 0, 0.05);
     --sombra-card-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
-}
+
+    /*Estados*/
+    --estado-fundo: #e4e7eb;
+    --estado-texto: #4b5563;
+}    
 
 .tema-vermelho {
     --cor-principal: #d7262b;
@@ -92,10 +96,17 @@ header a {
     transition: all 0.2s ease-in-out;
 }
 
-.botao:hover {
+.botao:not(:disabled):hover {
     background-color: var(--cor-principal-escura);
     transform: translateY(-2px);
     box-shadow: var(--sombra-botao-hover);
+}
+
+.botao:disabled {
+    background-color: var(--estado-fundo);
+    color: var(--estado-texto);
+    cursor: not-allowed;
+    box-shadow: none; /* Desliga a sombra que vem da regra base */
 }
 
 
@@ -261,6 +272,15 @@ footer {
 .card-produto:hover {
     transform: translateY(-4px);
     box-shadow: var(--sombra-card-hover);
+}
+
+/* Um produto esgotado não pode dar resposta visual onde não existe interação
+   (falsa afordância), então o card fica parado enquanto o mouse está sobre o
+   botão bloqueado. O :hover ficou por dentro do :has() de propósito: se ficasse
+   por fora, o card congelaria em qualquer ponto do mouse, não só no botão. */
+.card-produto:has(.botao:disabled:hover) {
+    transform: none;
+    box-shadow: var(--sombra-card);
 }
 
 /* Badges e etiquetas flutuantes */
