@@ -2,3 +2,7 @@ __pycache__/
 venv/
 .env
 AGENTS.md
+
+# Notas de acompanhamento: documentação pessoal de processo e de memória de
+# decisões (inclusive colaboração com IAs) — fica só na máquina local, não vai ao repositório
+NOTAS-*.md
