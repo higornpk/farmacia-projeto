@@ -395,3 +395,20 @@ footer {
 }
 
 
+/* ==========================================================
+   12. CARRINHO - Lista de itens
+   ========================================================== */
+
+/* Por que: o <ul> do navegador nasce com marcador (bolinha) e um recuo à esquerda que existe só para caber esse marcador. Aqui a lista é uma pilha de cards, não uma lista com marcadores — por isso os dois saem juntos; remover só a bolinha deixaria um espaço morto à esquerda. */
+
+ul.pilha-itens {
+    display: grid;
+    list-style: none;
+    gap: var(--espaco-md); /* Por que: no fluxo normal os <li> ficam colados; gap só funciona com flex/grid. Usar token mantém o respiro igual ao do resto do site. */
+    padding: 0;
+    margin: 0;
+}
+
+
+
+
