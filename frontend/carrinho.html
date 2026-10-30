@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrinho de compras | Drogavaz</title>
-    <!-- Padronização visual reutilizando a folha de estilo principal -->
+    <!-- CSS compartilhado com as outras páginas -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -17,40 +17,40 @@
                 <li><a href="index.html">Início</a></li>
                 <li><a href="catalogo.html">Catálogo</a></li>
                 <li><a href="enviar-receita.html">Enviar Receita</a></li>
-                <!-- Link direto para o carrinho para permitir acesso à finalização de compra -->
+                <!-- atalho para esta página no menu -->
                 <li><a href="carrinho.html">Carrinho</a></li>
             </ul>
         </nav>
      </header>
 
-    <!-- Estrutura principal do carrinho -->
+    <!-- carrinho: itens + fechamento -->
      <main class="carrinho-layout">
 
-        <!-- Area das seções do carrinho -->
+        <!-- coluna 1: os três itens -->
         <section class="secao-itens">
 
-            <!-- Cabeçalho simples da seção -->
+            <!-- título da coluna -->
             <div class="secao-cabecalho">
                 <h2>Produto Drogavaz</h2>
             </div>
 
-            <!-- Pilha de itens no carrinho -->
+            <!-- lista dos itens -->
             <ul class="pilha-itens">
 
                 <!-- Card de item 1 -->
                 <li class="card-item">
-                    <!-- Imagem do produto com texto alternativo para acessibilidade -->
+                    <!-- alt descritivo: o leitor de tela anuncia o produto -->
                      <div class="item-imagem">
                         <img src="https://via.placeholder.com/200x200?text=Dipirona" alt="Dipirona Monoidratada 500mg">
                      </div>
 
                      
-                    <!-- Informações sobre o item escolhido-->
+                    <!-- nome do produto -->
                     <div class="item-info">
                         <h3 class="item-titulo">Dipirona Monoidratada 500mg | Genérico</h3>
                     </div>
 
-                    <!-- seletor de quantidade do item -->
+                    <!-- quantidade: label ligado ao select pelo for/id -->
                     <div class="item-quantidade">
                         <label for="quantidade-item-1">Quantidade de itens: </label>
                         <select id="quantidade-item-1">
@@ -72,16 +72,16 @@
                         <data value="8.99" class="valor-atual">R$ 8,99</data>
                     </div>
 
-                    <!-- Mostra valor calculado do preço unitário para quantidade de itens-->
+                    <!-- subtotal: preço unitário × quantidade (o JS recalcula) -->
                     <div class="subtotal-item">
                         <p class="subtotal-rotulo">SUBTOTAL: <data value="8.99">R$ 8,99</data></p>
                     </div>
 
-                     <!-- Opção de poder remover do carrinho -->
+                     <!-- ação secundária: remover -->
                     <button type="button" class="botao-remover">Remover</button>
                 </li>
 
-                <!-- Card item 2-->
+                <!-- Card de item 2 -->
                  <li class="card-item">
                     <div class="item-imagem">
                         <img src="https://via.placeholder.com/200x200?text=Vitamina+C" alt="Vitamina C 1000mg">
@@ -113,7 +113,7 @@
                     <button type="button" class="botao-remover">Remover</button>
                  </li>
 
-                 <!-- Card item 3 -->
+                 <!-- Card de item 3 -->
                  <li class="card-item">
                     <div class="item-imagem">
                         <img src="https://via.placeholder.com/200x200?text=Protetor+Solar" alt="Protetor Solar FPS 50">
@@ -147,16 +147,15 @@
             </ul>
         </section>
 
-        <!-- Area fechamento do pedido-->
+        <!-- coluna 2: fechamento -->
         <section class="fechamento-pedido">
 
-            <!-- Titulo do fechamento-->
             <h2 class="fechamento-titulo">Fechamento</h2>
 
-            <!-- Conteudo das informações do fechamento -->
+            <!-- total = soma dos subtotais -->
             <p class="fechamento-rotulo">Valor total: <data value="74.39">R$ 74,39</data></p>
 
-            <!-- Botao que encaminhará ao WhatsApp da loja com o pedido pronto -->
+            <!-- Botão que encaminhará ao WhatsApp da loja com o pedido pronto -->
             <button type="button" class="botao-fechamento">Mandar pedido via WhatsApp!</button>
         </section>
      </main>
