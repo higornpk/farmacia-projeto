@@ -176,13 +176,13 @@ footer {
     display: flex;
     gap: var(--espaco-2xl);
     padding: var(--espaco-2xl);
-    max-width: 1200px; /* Limita a largura máxima para telas ultra-wide */
-    margin: 0 auto; /* Centraliza a página na tela */
+    max-width: 1200px;
+    margin: 0 auto; /* 1200px + auto: não estica em tela larga e fica centralizado */
    }
 
 /* Painel lateral de filtros */
 .painel-filtros {
-    flex: 0 0 260px;  /* Define largura fixa de 260px que não encolhe */
+    flex: 0 0 260px; /* 260px fixos: o filtro não encolhe quando a vitrine cresce */
     background-color: var(--cor-superficie);
     padding: var(--espaco-lg);
     border-radius: var(--raio);
@@ -274,10 +274,7 @@ footer {
     box-shadow: var(--sombra-card-hover);
 }
 
-/* Um produto esgotado não pode dar resposta visual onde não existe interação
-   (falsa afordância), então o card fica parado enquanto o mouse está sobre o
-   botão bloqueado. O :hover ficou por dentro do :has() de propósito: se ficasse
-   por fora, o card congelaria em qualquer ponto do mouse, não só no botão. */
+/* Por que: produto esgotado não pode levantar no hover (falsa afordância); o :hover dentro do :has() congela só sobre o botão. */
 .card-produto:has(.botao:disabled:hover) {
     transform: none;
     box-shadow: var(--sombra-card);
@@ -399,9 +396,9 @@ footer {
    12. CARRINHO - Lista de itens
    ========================================================== */
 
-/* Por que: o <ul> do navegador nasce com marcador (bolinha) e um recuo à esquerda que existe só para caber esse marcador. Aqui a lista é uma pilha de cards, não uma lista com marcadores — por isso os dois saem juntos; remover só a bolinha deixaria um espaço morto à esquerda. */
+/* Por que: pilha de cards, não lista com marcador — list-style e padding saem juntos, senão sobra a bolinha ou o recuo morto. */
 
-ul.pilha-itens {
+.pilha-itens {
     display: grid;
     list-style: none;
     gap: var(--espaco-md); /* Por que: no fluxo normal os <li> ficam colados; gap só funciona com flex/grid. Usar token mantém o respiro igual ao do resto do site. */
@@ -409,6 +406,41 @@ ul.pilha-itens {
     margin: 0;
 }
 
+/* Por que: linha de itens (imagem, nome, quantidade, preços, remover); sem flex tudo empilharia. Tokens do catálogo mantêm a cara do site. */
+.card-item {
+    display: flex;
+    align-items: center;
+    gap: var(--espaco-md);
+    padding: var(--espaco-md);
+    background-color: var(--cor-superficie);
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra-card);
+}
 
+/* Por que: 96px é miniatura (no catálogo, 160px). cover preenche sem distorcer; raio 8 é menor que o 12 do card (raio aninhado). */
+.item-imagem img {
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+    border-radius: 8px;
+}
 
+/* Por que: se a imagem encolher junto com a janela, o produto vira um risco ilegível — ela nunca cede espaço. */
+.item-imagem {
+    flex-shrink: 0;
+}
 
+/* Por que: o nome é o único elástico da linha. min-width: 0 destrava a quebra: sem ele o flex não encolhe abaixo da maior palavra e estoura. */
+.item-info {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Por que: mesma escala dos títulos do catálogo; margin 0 porque o respiro já vem do gap do card. */
+.item-titulo {
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.3;
+    margin: 0;
+}
