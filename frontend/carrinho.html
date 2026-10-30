@@ -38,7 +38,7 @@
             <ul class="pilha-itens">
 
                 <!-- Card de item 1 -->
-                <li class="Card-item">
+                <li class="card-item">
                     <!-- Imagem do produto com texto alternativo para acessibilidade -->
                      <div class="item-imagem">
                         <img src="https://via.placeholder.com/200x200?text=Dipirona" alt="Dipirona Monoidratada 500mg">
@@ -78,11 +78,11 @@
                     </div>
 
                      <!-- Opção de poder remover do carrinho -->
-                    <button class="botao-remover">Remover</button>
+                    <button type="button" class="botao-remover">Remover</button>
                 </li>
 
                 <!-- Card item 2-->
-                 <li class="Card-item">
+                 <li class="card-item">
                     <div class="item-imagem">
                         <img src="https://via.placeholder.com/200x200?text=Vitamina+C" alt="Vitamina C 1000mg">
                     </div>
@@ -110,11 +110,11 @@
                     <div class="subtotal-item">
                         <p class="subtotal-rotulo">SUBTOTAL: <data value="15.50">R$ 15,50</data></p>
                     </div>
-                    <button class="botao-remover">Remover</button>
+                    <button type="button" class="botao-remover">Remover</button>
                  </li>
 
                  <!-- Card item 3 -->
-                 <li class="Card-item">
+                 <li class="card-item">
                     <div class="item-imagem">
                         <img src="https://via.placeholder.com/200x200?text=Protetor+Solar" alt="Protetor Solar FPS 50">
                     </div>
@@ -142,9 +142,22 @@
                     <div class="subtotal-item">
                         <p class="subtotal-rotulo">SUBTOTAL: <data value="49.90">R$ 49,90</data></p>
                     </div>
-                    <button class="botao-remover">Remover</button>
+                    <button type="button" class="botao-remover">Remover</button>
                  </li>
             </ul>
+        </section>
+
+        <!-- Area fechamento do pedido-->
+        <section class="fechamento-pedido">
+
+            <!-- Titulo do fechamento-->
+            <h2 class="fechamento-titulo">Fechamento</h2>
+
+            <!-- Conteudo das informações do fechamento -->
+            <p class="fechamento-rotulo">Valor total: <data value="74.39">R$ 74,39</data></p>
+
+            <!-- Botao que encaminhará ao WhatsApp da loja com o pedido pronto -->
+            <button type="button" class="botao-fechamento">Mandar pedido via WhatsApp!</button>
         </section>
      </main>
 </body>
