@@ -444,3 +444,24 @@ footer {
     line-height: 1.3;
     margin: 0;
 }
+
+.item-quantidade {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.item-quantidade label {
+    font-size: 0.85rem;
+    color: #666
+}
+
+.item-quantidade select {
+    min-height: 44px;
+    padding: 8px 12px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    background-color: var(--cor-superficie);
+    font-size: 1rem;
+    cursor: pointer;
+}
