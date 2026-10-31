@@ -5,6 +5,9 @@
 
 /* ===== 1. VARIÁVEIS E TEMAS ===== */
 :root {
+    /* Por que: o site não tem tema escuro; sem isto o navegador pinta campos e barras com as cores do sistema e a página fica remendada. */
+    color-scheme: light;
+
     /* Cores da marca (mudam de acordo com o tema) */
     --cor-principal: #1572eb;
     --cor-principal-escura: darkblue;
@@ -220,7 +223,14 @@ footer {
     border-radius: 6px;
     box-sizing: border-box; /*Garante que o padding não estoure a largura */
     font-family: inherit;
-   }
+    background-color: var(--cor-superficie);
+    color: var(--cor-texto);
+}
+
+.grupo-filtro input[type="checkbox"] {
+    accent-color: var(--cor-principal);
+}
+   
 
 /* Estilo para cada opção de checkbox */
  .opcao-filtro {
@@ -230,6 +240,7 @@ footer {
     font-weight: normal !important;
     margin-bottom: 6px;
     cursor: pointer;
+    
    }
 
 /* Seção da vitrine ocupando todo espaço restante */
@@ -445,23 +456,42 @@ footer {
     margin: 0;
 }
 
+/* Por que: coluna para o rótulo ficar acima do select; 4px porque os dois formam um bloco só. */
 .item-quantidade {
     display: flex;
     flex-direction: column;
     gap: 4px;
 }
 
+/* Por que: rótulo menor e cinza cria hierarquia — o dado é o select, não o texto. */
 .item-quantidade label {
     font-size: 0.85rem;
-    color: #666
+    color: #666;
 }
 
+/* Por que: 44px é o alvo mínimo de toque (WCAG/Apple/Google) e min-height cresce no zoom; fundo e cor andam juntos porque o sistema pode entregar texto claro. */
 .item-quantidade select {
     min-height: 44px;
     padding: 8px 12px;
     border: 1px solid var(--cor-borda);
     border-radius: 8px;
     background-color: var(--cor-superficie);
+    color: var(--cor-texto);
     font-size: 1rem;
     cursor: pointer;
+}
+
+/* Por que: margin 0 tira o respiro padrão do <p>, que somava com o gap do card e desalinhava os números. */
+.subtotal-rotulo {
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Por que: o pai deixa tudo pequeno e cinza; o filho recupera tamanho e cor porque é o número que o cliente procura. */
+.subtotal-rotulo data {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--cor-principal);
 }
