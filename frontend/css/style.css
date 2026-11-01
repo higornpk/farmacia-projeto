@@ -513,9 +513,17 @@ footer {
     color: var(--cor-principal);
 }
 
+/* Por que: min-width fixa a largura da coluna; com o text-align junto, os três subtotais encostam na mesma linha vertical. */
+.subtotal-item {
+    text-align: right;
+    min-width: 168px;
+}
+
 /* Por que: o unitário é referência, não o valor a pagar; peso e cor no container atingem o <data> sem herdar para o subtotal vizinho. */
 .item-valor {
     font-size: 1rem;
     font-weight: bold;
     color: var(--cor-texto);
+    text-align: right;
+    min-width: 72px;
 }
