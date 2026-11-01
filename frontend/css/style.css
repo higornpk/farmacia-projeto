@@ -18,6 +18,9 @@
     --cor-superficie: #ffffff;
     --cor-borda: #e0e0e0;
 
+    /* Por que: existe um vermelho só no site, para ação destrutiva aqui e erro de formulário na Fase 2 não saírem de tons diferentes. */
+    --cor-perigo: #d32f2f;
+
     /* Espaçamento */
     --espaco-xs: 8px;
     --espaco-sm: 12px;
@@ -526,4 +529,26 @@ footer {
     color: var(--cor-texto);
     text-align: right;
     min-width: 72px;
+}
+
+/* Por que: só com ícone o alvo vira quadrado (o texto não define largura); sem fundo, ele não compete com o azul do subtotal. */
+.botao-remover {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    color: #666;
+    cursor: pointer;
+}
+
+/* Por que: a borda vermelha confirma que a caixa inteira é clicável; o ícone acompanha sozinho porque herda a cor. */
+.botao-remover:hover {
+    color: var(--cor-perigo);
+    border-color: var(--cor-perigo);
+
 }
