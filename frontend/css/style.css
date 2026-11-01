@@ -227,10 +227,27 @@ footer {
     color: var(--cor-texto);
 }
 
+/* Por que: o sistema em modo escuro pintava o quadradinho de preto; appearance: none tira o desenho dele e devolve o controle ao CSS. */
 .grupo-filtro input[type="checkbox"] {
-    accent-color: var(--cor-principal);
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 4px;
+    background-color: var(--cor-superficie);
+    margin: 0;
+    flex-shrink: 0;
 }
    
+/* Por que: sem o ✓ a marcação dependeria só da cor, e pseudo-elemento não funciona em input no Firefox — daí o SVG de fundo. */
+.grupo-filtro input[type="checkbox"]:checked {
+    background-color: var(--cor-principal);
+    border-color: var(--cor-principal);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3 3 7-7' fill='none' stroke='white' stroke-width='2.5'/%3E%3C/svg%3E");
+    background-size: 12px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 /* Estilo para cada opção de checkbox */
  .opcao-filtro {
